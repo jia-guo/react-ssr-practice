@@ -1,0 +1,50 @@
+{
+  "name": "jia-react-ssr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run dev:client\" \"npm run dev:server\" \"npm run dev:start\"",
+    "dev:client": "webpack --config webpack.client.js --watch",
+    "dev:server": "webpack --config webpack.server.js --watch",
+    "dev:start": "nodemon --watch build --exec node \"./build/bundle.js\"",
+    "dev:mock": "nodemon \"./mock/mock-server.js\"",
+    "dev:puppet": "nodemon \"./server/puppet-ssr.js\"",
+    "dev:prerender": "nodemon \"./server/prerender-ssr.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "css-loader": "^3.6.0",
+    "express": "^4.17.1",
+    "hoist-non-react-statics": "^3.3.2",
+    "http-proxy-middleware": "^1.0.6",
+    "prerender": "^5.8.0",
+    "puppeteer": "^7.0.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "@babel/preset-react": "^7.12.13",
+    "babel-loader": "^8.2.2",
+    "concurrently": "^5.3.0",
+    "cors": "^2.8.5",
+    "isomorphic-style-loader": "^5.1.0",
+    "nodemon": "^2.0.7",
+    "postcss-loader": "^5.0.0",
+    "prerender-spa-plugin": "^3.4.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
